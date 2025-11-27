@@ -1,0 +1,6 @@
+employee_id,name,department,hire_date,exit_date,salary
+101,Rohan,Engineering,2020-05-10,,60000
+102,Amit,HR,2019-03-01,2023-09-15,45000
+103,Neha,Finance,2021-01-20,,52000
+104,Sameer,Sales,2018-11-05,2022-07-30,47000
+105,Anjali,Engineering,2022-06-25,,58000

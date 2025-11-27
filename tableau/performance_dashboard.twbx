@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook original-version='10.5' source-build='tableau' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <datasources>
+    <datasource name='EmployeeData'>
+      <connection class='textscan' filename='data/processed/employee_processed.csv'>
+        <named-connection name='EmployeeCSV' caption='Employee Data CSV' />
+      </connection>
+      <metadata-records>
+        <metadata-record class='column' local-name='employee_id' remote-name='employee_id' datatype='integer'/>
+        <metadata-record class='column' local-name='name' remote-name='name' datatype='string'/>
+        <metadata-record class='column' local-name='department' remote-name='department' datatype='string'/>
+        <metadata-record class='column' local-name='hire_date' remote-name='hire_date' datatype='date'/>
+        <metadata-record class='column' local-name='exit_date' remote-name='exit_date' datatype='date'/>
+        <metadata-record class='column' local-name='salary' remote-name='salary' datatype='integer'/>
+        <metadata-record class='column' local-name='tenure_years' remote-name='tenure_years' datatype='real'/>
+        <metadata-record class='column' local-name='is_active' remote-name='is_active' datatype='integer'/>
+      </metadata-records>
+    </datasource>
+  </datasources>
+
+  <worksheets>
+    <!-- Worksheet 1: Active vs Exited -->
+    <worksheet name='Active vs Exited'>
+      <table>
+        <column name='is_active' />
+        <column-instance column='is_active' alias='Employee Status' />
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 2: Salary by Department -->
+    <worksheet name='Salary by Department '>
+      <table>
+        <column name='department' />
+        <column name='salary' />
+        <column-instance column='department' alias='Department' />
+        <column-instance column='salary' alias='Total Salary' aggregation='sum' />
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 3: Avg Tenure -->
+    <worksheet name='Average Tenure'>
+      <table>
+        <column name='tenure_years' />
+        <column-instance column='tenure_years' alias='Avg Tenure' aggregation='avg' />
+      </table>
+    </worksheet>
+
+    <!-- Worksheet 4: Department Count -->
+    <worksheet name='Employees per Department'>
+      <table>
+        <column name='department' />
+        <column-instance column='department' alias='Department' />
+      </table>
+    </worksheet>
+  </worksheets>
+
+  <dashboards>
+    <dashboard name='Employee Performance Dashboard'>
+      <zone type='layout'>
+        <zone type='worksheet' worksheet='Active vs Exited' />
+        <zone type='worksheet' worksheet='Salary by Department ' />
+        <zone type='worksheet' worksheet='Average Tenure' />
+        <zone type='worksheet' worksheet='Employees per Department' />
+      </zone>
+    </dashboard>
+  </dashboards>
+</workbook>
