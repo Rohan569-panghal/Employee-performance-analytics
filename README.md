@@ -1,0 +1,26 @@
+# Employee Performance Analytics
+
+This project evaluates employee productivity, performance metrics, and retention
+insights using HR datasets. Tools used include Excel, SQL, Tableau, and Python
+for automated analytics.
+
+## 🚀 Tools Used
+- Excel — Raw HR data
+- SQL — HR analytics queries
+- Tableau — Dashboards & heatmaps
+- Python — ETL & visualization (optional but included)
+
+## 📂 Project Structure
+(Your folder structure should match the project)
+
+## ▶️ How to Run
+Install dependencies:
+
+## pip install -r requirements.txt
+ Run ETL:
+
+## python scripts/etl.py
+Run analysis:
+
+## python scripts/analysis.py
+Data visualizations will appear automatically.
